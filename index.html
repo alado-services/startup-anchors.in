@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Startup Anchor - Legal, Financial & Compliance Partners for
+            India's Startups</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Syne:wght@400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+            rel="stylesheet">
+        <style>
+:root {
+  --cream:    #FAF8F4;
+  --cream2:   #F3EFE7;
+  --cream3:   #EDE7DA;
+  --ink:      #18181B;
+  --ink2:     #2D2D35;
+  --ink3:     #48484F;
+  --gold:     #B8872E;
+  --gold2:    #D4A455;
+  --gold3:    #F0CCAA;
+  --border:   rgba(184,135,46,.15);
+  --border2:  rgba(24,24,27,.08);
+  --shadow:   0 2px 24px rgba(24,24,27,.06);
+  --shadow2:  0 8px 48px rgba(24,24,27,.1);
+  --white:    #FFFFFF;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--cream); color:var(--ink); font-family:'DM Sans',sans-serif; overflow-x:hidden; cursor:none; }
+
+/* Custom cursor */
+.cur  { position:fixed; width:9px; height:9px; background:var(--gold); border-radius:50%; pointer-events:none; z-index:9999; transform:translate(-50%,-50%); transition:width .18s,height .18s,background .2s; }
+.curR { position:fixed; width:32px; height:32px; border:1.5px solid var(--gold); border-radius:50%; pointer-events:none; z-index:9998; transform:translate(-50%,-50%); opacity:.45; transition:width .2s,height .2s; }
+
+/* ─── NAV ─── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:900; height:68px;
+  padding:0 5%; display:flex; align-items:center; justify-content:space-between;
+  background:rgba(250,248,244,.9); backdrop-filter:blur(24px);
+  border-bottom:1px solid var(--border2); transition:box-shadow .3s;
+}
+nav.scrolled { box-shadow:var(--shadow); }
+.logo { display:flex; align-items:center; gap:10px; text-decoration:none; }
+.logo svg { width:34px; height:34px; }
+.logo-name { font-family:'Syne',sans-serif; font-size:1.2rem; font-weight:700; color:var(--ink); letter-spacing:-.01em; }
+.logo-name span { color:var(--gold); }
+.logo-sub  { font-size:.54rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink3); font-weight:400; }
+.nav-ul { display:flex; gap:28px; list-style:none; }
+.nav-ul a { color:var(--ink2); text-decoration:none; font-size:.78rem; letter-spacing:.04em; font-weight:500; opacity:.7; transition:opacity .2s,color .2s; }
+.nav-ul a:hover { opacity:1; color:var(--gold); }
+.nav-cta { background:var(--ink)!important; color:var(--cream)!important; padding:9px 22px; border-radius:100px; opacity:1!important; font-weight:600!important; font-size:.75rem!important; transition:background .2s,transform .2s!important; }
+.nav-cta:hover { background:var(--gold)!important; transform:translateY(-1px); }
+.ham { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+.ham span { width:22px; height:1.5px; background:var(--ink); display:block; transition:.3s; }
+.mob { position:fixed; inset:0; background:rgba(250,248,244,.98); z-index:850; display:flex; flex-direction:column; justify-content:center; align-items:center; gap:24px; transform:translateX(100%); transition:transform .4s cubic-bezier(.4,0,.2,1); }
+.mob.open { transform:translateX(0); }
+.mob a { font-family:'Playfair Display',serif; font-size:2rem; font-weight:400; color:var(--ink); text-decoration:none; transition:color .2s; }
+.mob a:hover { color:var(--gold); }
+
+/* ─── HERO ─── */
+.hero {
+  min-height:100vh; display:flex; align-items:center;
+  padding:100px 5% 80px; position:relative; overflow:hidden;
+  background: linear-gradient(135deg, #FAF8F4 0%, #F5F0E6 40%, #EFE8D8 100%);
+}
+.hero::before {
+  content:''; position:absolute; inset:0;
+  background:
+    radial-gradient(circle 500px at 85% 30%, rgba(184,135,46,.08) 0%, transparent 65%),
+    radial-gradient(circle 300px at 15% 75%, rgba(184,135,46,.05) 0%, transparent 60%);
+}
+/* Dot grid */
+.hero::after {
+  content:''; position:absolute; inset:0;
+  background-image: radial-gradient(circle, rgba(184,135,46,.18) 1px, transparent 1px);
+  background-size: 36px 36px;
+  opacity:.35;
+}
+.hero-inner { position:relative; z-index:2; max-width:900px; }
+.hero-tag {
+  display:inline-flex; align-items:center; gap:10px;
+  background:var(--white); border:1px solid var(--border);
+  padding:7px 16px 7px 10px; border-radius:100px;
+  font-size:.7rem; font-weight:500; color:var(--ink2); letter-spacing:.04em;
+  margin-bottom:36px; box-shadow:var(--shadow);
+  opacity:0; animation:fadeUp .7s ease .1s forwards;
+}
+.hero-tag-dot { width:7px; height:7px; background:var(--gold); border-radius:50%; animation:pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.6;transform:scale(.85)} }
+.hero-h1 {
+  font-family:'Playfair Display',serif;
+  font-size:clamp(3rem,6.5vw,6rem);
+  font-weight:600; line-height:1.05; letter-spacing:-.02em;
+  color:var(--ink);
+  opacity:0; animation:fadeUp .9s ease .3s forwards;
+}
+.hero-h1 em { font-style:italic; color:var(--gold); }
+.hero-h1 .outline { -webkit-text-stroke:2px var(--ink); color:transparent; }
+.hero-sub {
+  font-size:1rem; line-height:1.78; color:var(--ink3); max-width:560px;
+  margin:28px 0 44px; font-weight:400;
+  opacity:0; animation:fadeUp .9s ease .5s forwards;
+}
+.hero-btns { display:flex; gap:12px; flex-wrap:wrap; opacity:0; animation:fadeUp .9s ease .7s forwards; }
+.btn-dark { display:inline-flex; align-items:center; gap:9px; background:var(--ink); color:var(--cream); padding:15px 32px; font-size:.8rem; font-weight:600; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; border-radius:100px; transition:background .25s,transform .2s; }
+.btn-dark:hover { background:var(--gold); transform:translateY(-2px); }
+.btn-outline { display:inline-flex; align-items:center; gap:9px; border:1.5px solid var(--border2); color:var(--ink); padding:14px 28px; font-size:.8rem; font-weight:500; letter-spacing:.04em; text-transform:uppercase; text-decoration:none; border-radius:100px; transition:border-color .25s,color .25s,transform .2s; }
+.btn-outline:hover { border-color:var(--gold); color:var(--gold); transform:translateY(-2px); }
+
+.hero-visual {
+  position:absolute; right:5%; top:50%; transform:translateY(-50%);
+  z-index:1; opacity:.18;
+  font-family:'Syne',sans-serif; font-size:22vw; font-weight:800;
+  color:var(--gold); line-height:1; letter-spacing:-.05em; pointer-events:none;
+  white-space:nowrap;
+}
+
+/* ─── STATS TICKER ─── */
+.ticker-wrap {
+  background:var(--ink); overflow:hidden; padding:0;
+  border-top:1px solid rgba(255,255,255,.05);
+}
+.ticker-inner {
+  display:flex; align-items:center;
+  animation:ticker 28s linear infinite;
+  white-space:nowrap; padding:16px 0;
+}
+.ticker-item {
+  display:flex; align-items:center; gap:14px;
+  padding:0 40px; flex-shrink:0;
+}
+.ticker-num { font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; color:var(--gold2); }
+.ticker-label { font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(250,248,244,.5); font-weight:400; }
+.ticker-sep { width:4px; height:4px; border-radius:50%; background:var(--gold); opacity:.4; }
+@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ─── SECTIONS ─── */
+section { padding:100px 5%; }
+.stag { display:inline-flex; align-items:center; gap:8px; font-size:.65rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:16px; }
+.stag-line { width:20px; height:1.5px; background:var(--gold); }
+.sh { font-family:'Playfair Display',serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:600; line-height:1.1; letter-spacing:-.02em; color:var(--ink); margin-bottom:18px; }
+.sh em { font-style:italic; color:var(--gold); }
+.sh .light { font-weight:400; }
+.sd { color:var(--ink3); font-size:.92rem; line-height:1.8; max-width:520px; }
+.chip { display:inline-flex; align-items:center; gap:6px; background:var(--white); border:1px solid var(--border2); padding:5px 13px; border-radius:100px; font-size:.68rem; color:var(--ink2); font-weight:500; box-shadow:0 1px 4px rgba(0,0,0,.04); }
+
+/* ─── WHY ─── */
+.why { background:var(--white); }
+.why-grid { display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.why-vis { position:relative; display:flex; align-items:center; justify-content:center; }
+.why-card-stack { position:relative; width:340px; height:340px; }
+.wcs-card {
+  position:absolute; background:var(--cream); border:1px solid var(--border2);
+  border-radius:16px; padding:24px 28px; box-shadow:var(--shadow);
+}
+.wcs-card:nth-child(1) { top:0; left:0; width:240px; }
+.wcs-card:nth-child(2) { top:60px; right:0; width:220px; }
+.wcs-card:nth-child(3) { bottom:0; left:20px; width:260px; }
+.wcs-ico { font-size:1.4rem; margin-bottom:10px; }
+.wcs-card h4 { font-family:'Syne',sans-serif; font-size:.82rem; font-weight:700; color:var(--ink); margin-bottom:4px; }
+.wcs-card p { font-size:.72rem; color:var(--ink3); line-height:1.5; }
+.wcs-tag { display:inline-block; font-size:.6rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); background:rgba(184,135,46,.1); padding:3px 8px; border-radius:100px; margin-bottom:10px; }
+.pills { display:flex; flex-wrap:wrap; gap:8px; margin-top:24px; }
+.pill { border:1px solid var(--border); background:var(--cream); padding:7px 15px; border-radius:100px; font-size:.7rem; color:var(--ink2); font-weight:500; transition:border-color .2s,background .2s; }
+.pill:hover { border-color:var(--gold); background:rgba(184,135,46,.05); }
+
+/* ─── SERVICES ─── */
+.svc { background:var(--cream2); }
+.svc-intro { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:end; margin-bottom:56px; }
+.svc-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.sc {
+  background:var(--white); border:1px solid var(--border2); border-radius:14px;
+  padding:32px 28px; position:relative; overflow:hidden;
+  transition:box-shadow .3s, transform .3s, border-color .3s;
+  cursor:default;
+}
+.sc:hover { box-shadow:var(--shadow2); transform:translateY(-4px); border-color:var(--border); }
+.sc-accent { position:absolute; top:0; right:0; width:80px; height:80px; border-radius:0 14px 0 80px; background:linear-gradient(135deg,rgba(184,135,46,.08),rgba(184,135,46,.02)); }
+.sc-n { font-family:'Syne',sans-serif; font-size:.62rem; font-weight:700; letter-spacing:.15em; color:var(--gold); margin-bottom:18px; }
+.sc-ico { width:38px; height:38px; margin-bottom:14px; color:var(--gold); }
+.sc-title { font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; color:var(--ink); margin-bottom:14px; line-height:1.25; }
+.sc-list { list-style:none; display:flex; flex-direction:column; gap:6px; }
+.sc-list li { font-size:.75rem; color:var(--ink3); font-weight:400; line-height:1.5; display:flex; gap:8px; align-items:baseline; }
+.sc-list li::before { content:'↳'; color:var(--gold); font-size:.65rem; flex-shrink:0; }
+.sc-cta { background:linear-gradient(135deg,var(--ink),var(--ink2)); border-radius:14px; padding:32px 28px; display:flex; flex-direction:column; justify-content:center; }
+.sc-cta .sc-title { color:var(--cream); }
+.sc-cta .sc-list li { color:rgba(250,248,244,.6); }
+.sc-cta .sc-list li::before { color:var(--gold2); }
+
+/* ─── PROCESS ─── */
+.proc { background:var(--white); }
+.proc-head { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:end; margin-bottom:60px; }
+.step-row { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; }
+.step {
+  background:var(--cream); border:1px solid var(--border2); border-radius:12px;
+  padding:24px 20px; text-align:center; position:relative;
+  transition:box-shadow .3s,transform .3s,border-color .3s;
+}
+.step:hover { box-shadow:var(--shadow); transform:translateY(-3px); border-color:var(--border); }
+.step-n { font-family:'Syne',sans-serif; font-size:1.8rem; font-weight:800; color:var(--gold); line-height:1; margin-bottom:12px; opacity:.4; }
+.step h4 { font-family:'Syne',sans-serif; font-size:.78rem; font-weight:700; color:var(--ink); margin-bottom:6px; }
+.step p { font-size:.7rem; color:var(--ink3); line-height:1.6; }
+.step-arrow { display:flex; align-items:center; justify-content:center; color:var(--gold); opacity:.4; font-size:1rem; padding-top:32px; }
+
+/* ─── TEAM ─── */
+.team-sec { background:var(--cream2); }
+
+/* Founder */
+.founder-wrap {
+  background:var(--white); border:1px solid var(--border2); border-radius:20px;
+  overflow:hidden; margin:44px 0 64px; box-shadow:var(--shadow);
+  display:grid; grid-template-columns:300px 1fr;
+}
+.f-left {
+  background:linear-gradient(160deg, var(--ink) 0%, var(--ink2) 100%);
+  padding:48px 36px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  position:relative; overflow:hidden;
+}
+.f-left::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse at 50% 0%, rgba(184,135,46,.2) 0%, transparent 65%);
+}
+.f-left::after {
+  content:''; position:absolute; bottom:-60px; right:-60px;
+  width:200px; height:200px; border-radius:50%;
+  border:1px solid rgba(184,135,46,.15);
+}
+.f-avatar {
+  width:140px; height:140px; border-radius:50%;
+  border:2.5px solid var(--gold); margin-bottom:20px;
+  background:rgba(255,255,255,.08); display:flex; align-items:center; justify-content:center;
+  position:relative; overflow:hidden; flex-shrink:0;
+}
+.f-init { font-family:'Playfair Display',serif; font-size:2.4rem; font-weight:600; color:var(--gold2); opacity:.9; }
+.f-avatar img { width:100%; height:100%; object-fit:cover; }
+.f-name { font-family:'Playfair Display',serif; font-size:1.25rem; font-weight:600; color:var(--cream); text-align:center; margin-bottom:4px; position:relative; }
+.f-role { font-size:.6rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold2); text-align:center; position:relative; }
+.f-badges { display:flex; flex-direction:column; gap:6px; margin-top:18px; position:relative; width:100%; }
+.badge { font-size:.6rem; letter-spacing:.06em; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1); padding:5px 12px; border-radius:100px; color:rgba(250,248,244,.7); text-align:center; }
+
+.f-right { padding:48px 52px; display:flex; flex-direction:column; justify-content:center; }
+.f-quote { font-family:'Playfair Display',serif; font-size:1.45rem; font-weight:400; font-style:italic; color:var(--gold); line-height:1.5; margin-bottom:28px; opacity:.9; }
+.f-bio { display:flex; flex-direction:column; gap:12px; }
+.f-bio p { font-size:.86rem; color:var(--ink3); line-height:1.82; }
+.f-bio p strong { color:var(--ink); font-weight:600; }
+.f-creds { display:flex; gap:16px; margin-top:24px; padding-top:24px; border-top:1px solid var(--border2); flex-wrap:wrap; }
+.cred { display:flex; align-items:center; gap:7px; }
+.cred-dot { width:5px; height:5px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+.cred span { font-size:.7rem; color:var(--ink3); }
+
+/* Team grid */
+.team-section-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:28px; flex-wrap:wrap; gap:12px; }
+.team-filter { display:flex; gap:8px; flex-wrap:wrap; }
+.tf-btn { border:1px solid var(--border2); background:transparent; padding:7px 16px; border-radius:100px; font-size:.7rem; font-weight:500; color:var(--ink3); cursor:pointer; transition:all .2s; font-family:'DM Sans',sans-serif; }
+.tf-btn.active, .tf-btn:hover { border-color:var(--gold); color:var(--gold); background:rgba(184,135,46,.06); }
+
+.team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+.tc {
+  background:var(--white); border:1px solid var(--border2); border-radius:14px;
+  padding:24px 20px; transition:box-shadow .3s,transform .3s,border-color .3s;
+  position:relative; overflow:hidden;
+}
+.tc:hover { box-shadow:var(--shadow); transform:translateY(-3px); border-color:var(--border); }
+.tc-header { display:flex; align-items:flex-start; gap:14px; margin-bottom:14px; }
+.tc-av {
+  width:52px; height:52px; flex-shrink:0; border-radius:12px;
+  background:linear-gradient(135deg,var(--cream3),var(--cream2));
+  border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Syne',sans-serif; font-size:1rem; font-weight:800; color:var(--gold);
+  letter-spacing:.03em; overflow:hidden;
+}
+.tc-av img { width:100%; height:100%; object-fit:cover; }
+/* CA cards get a slightly different tint */
+.tc.ca .tc-av { background:linear-gradient(135deg,#EDF5EC,#E0F0DE); color:#4A8C46; }
+.tc.ca .tc-type { background:rgba(74,140,70,.1); color:#4A8C46; }
+.tc-av span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.tc-meta { flex:1; }
+.tc-name { font-family:'Syne',sans-serif; font-size:.88rem; font-weight:700; color:var(--ink); line-height:1.2; margin-bottom:4px; }
+.tc-role { font-size:.62rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink3); font-weight:500; line-height:1.4; }
+.tc-type { display:inline-block; font-size:.57rem; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--gold); background:rgba(184,135,46,.1); padding:2px 8px; border-radius:100px; margin-bottom:4px; }
+.tc-bio { font-size:.74rem; color:var(--ink3); line-height:1.7; }
+.tc-firm { font-size:.62rem; color:var(--ink3); opacity:.6; margin-top:8px; font-style:italic; }
+
+/* ─── PARTNERSHIP ─── */
+.partner-sec { background:var(--ink); color:var(--cream); position:relative; overflow:hidden; }
+.partner-sec::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 60% 70% at 80% 30%, rgba(184,135,46,.1) 0%, transparent 65%),
+             radial-gradient(ellipse 40% 50% at 10% 80%, rgba(184,135,46,.06) 0%, transparent 60%);
+}
+.partner-sec::after {
+  content:''; position:absolute; top:0; left:0; right:0; bottom:0;
+  background-image: radial-gradient(circle, rgba(250,248,244,.04) 1px, transparent 1px);
+  background-size:40px 40px;
+}
+.partner-inner { position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center; }
+.partner-sec .stag { color:var(--gold2); }
+.partner-sec .stag-line { background:var(--gold2); }
+.partner-sec .sh { color:var(--cream); }
+.partner-sec .sh em { color:var(--gold2); }
+.partner-sec .sd { color:rgba(250,248,244,.6); max-width:100%; }
+.p-logo-box {
+  display:inline-flex; align-items:center; gap:14px;
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+  padding:16px 22px; border-radius:12px; margin-bottom:28px;
+}
+.p-logo-icon { width:44px; height:44px; background:var(--gold); border-radius:8px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-family:'Syne',sans-serif; font-size:.85rem; font-weight:800; color:var(--ink); letter-spacing:.04em; }
+.p-logo-name { font-family:'Syne',sans-serif; font-size:1.1rem; font-weight:700; color:var(--cream); }
+.p-logo-sub { font-size:.6rem; letter-spacing:.14em; text-transform:uppercase; color:rgba(250,248,244,.45); }
+.p-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); border-radius:12px; overflow:hidden; }
+.ps { padding:20px 16px; text-align:center; }
+.ps-n { font-family:'Syne',sans-serif; font-size:1.9rem; font-weight:800; color:var(--gold2); line-height:1; margin-bottom:4px; }
+.ps-l { font-size:.6rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(250,248,244,.4); }
+.p-expertise { display:flex; flex-direction:column; gap:0; border:1px solid rgba(255,255,255,.08); border-radius:12px; overflow:hidden; margin-top:20px; }
+.pe { display:flex; align-items:center; gap:12px; padding:13px 18px; border-bottom:1px solid rgba(255,255,255,.06); transition:background .2s; }
+.pe:last-child { border-bottom:none; }
+.pe:hover { background:rgba(184,135,46,.08); }
+.pe-dot { width:5px; height:5px; border-radius:50%; background:var(--gold2); flex-shrink:0; }
+.pe span { font-size:.76rem; color:rgba(250,248,244,.75); }
+.client-types { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:20px; }
+.ct { border:1px solid rgba(255,255,255,.08); border-radius:10px; padding:14px 16px; display:flex; align-items:center; gap:10px; transition:border-color .2s,background .2s; }
+.ct:hover { border-color:rgba(184,135,46,.4); background:rgba(184,135,46,.06); }
+.ct-ico { font-size:1rem; }
+.ct-text { font-size:.73rem; font-weight:500; color:rgba(250,248,244,.8); }
+
+/* ─── PILLARS ─── */
+.pillars-sec { background:var(--cream); }
+.pillars-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:52px; }
+.pil {
+  background:var(--white); border:1px solid var(--border2); border-radius:14px;
+  padding:30px 24px; transition:box-shadow .3s,transform .3s,border-color .3s;
+}
+.pil:hover { box-shadow:var(--shadow); transform:translateY(-3px); border-color:var(--border); }
+.pil-ico { font-size:1.6rem; margin-bottom:14px; }
+.pil h3 { font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; color:var(--ink); margin-bottom:8px; }
+.pil p { font-size:.76rem; color:var(--ink3); line-height:1.7; }
+
+/* ─── TESTIMONIALS ─── */
+.testi-sec { background:var(--white); }
+.testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:52px; }
+.tc2 {
+  background:var(--cream); border:1px solid var(--border2); border-radius:14px;
+  padding:30px 26px; transition:box-shadow .3s,transform .3s,border-color .3s;
+}
+.tc2:hover { box-shadow:var(--shadow); transform:translateY(-3px); border-color:var(--border); }
+.stars { color:var(--gold); font-size:.7rem; margin-bottom:14px; }
+.tt { font-size:.84rem; color:var(--ink2); line-height:1.82; font-style:italic; margin-bottom:22px; }
+.ta { display:flex; align-items:center; gap:12px; }
+.ta-av { width:38px; height:38px; border-radius:10px; background:linear-gradient(135deg,var(--cream3),var(--cream2)); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-family:'Syne',sans-serif; font-size:.82rem; font-weight:800; color:var(--gold); flex-shrink:0; }
+.ta-name { font-size:.78rem; font-weight:600; color:var(--ink); margin-bottom:1px; }
+.ta-role { font-size:.68rem; color:var(--ink3); }
+
+/* ─── CTA ─── */
+.cta-sec {
+  background:linear-gradient(135deg, var(--ink) 0%, #232330 100%);
+  text-align:center; position:relative; overflow:hidden; padding:110px 5%;
+}
+.cta-sec::before {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 60% 80% at 50% 50%, rgba(184,135,46,.1) 0%, transparent 70%);
+}
+.cta-sec::after {
+  content:''; position:absolute; inset:0;
+  background-image: radial-gradient(circle, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size:36px 36px;
+}
+.cta-inner { position:relative; z-index:2; }
+.cta-sec .stag { color:var(--gold2); justify-content:center; }
+.cta-sec .stag-line { background:var(--gold2); }
+.cta-sec .sh { color:var(--cream); max-width:680px; margin:0 auto 16px; }
+.cta-sec .sh em { color:var(--gold2); }
+.cta-sec .sd { color:rgba(250,248,244,.55); text-align:center; margin:0 auto 44px; }
+.cta-btns { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
+.btn-gold { display:inline-flex; align-items:center; gap:9px; background:var(--gold); color:var(--ink); padding:15px 32px; font-size:.8rem; font-weight:700; letter-spacing:.05em; text-transform:uppercase; text-decoration:none; border-radius:100px; transition:background .25s,transform .2s; }
+.btn-gold:hover { background:var(--gold2); transform:translateY(-2px); }
+.btn-ghost-light { display:inline-flex; align-items:center; gap:9px; border:1.5px solid rgba(255,255,255,.2); color:var(--cream); padding:14px 28px; font-size:.8rem; font-weight:500; letter-spacing:.04em; text-transform:uppercase; text-decoration:none; border-radius:100px; transition:border-color .25s,transform .2s; }
+.btn-ghost-light:hover { border-color:var(--gold); transform:translateY(-2px); }
+
+/* ─── CONTACT STRIP ─── */
+.strip { background:var(--cream2); border-top:1px solid var(--border2); border-bottom:1px solid var(--border2); padding:0; display:grid; grid-template-columns:repeat(3,1fr); }
+.strip-item { padding:32px 40px; display:flex; align-items:center; gap:16px; border-right:1px solid var(--border2); }
+.strip-item:last-child { border-right:none; }
+.strip-ico { width:40px; height:40px; background:var(--white); border:1px solid var(--border2); border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0; color:var(--gold); font-size:1rem; box-shadow:0 1px 4px rgba(0,0,0,.04); }
+.strip-l { font-size:.62rem; text-transform:uppercase; letter-spacing:.12em; color:var(--ink3); margin-bottom:3px; font-weight:500; }
+.strip-v { font-size:.84rem; color:var(--ink); font-weight:600; }
+
+/* ─── FOOTER ─── */
+footer { background:var(--ink); color:var(--cream); padding:60px 5% 28px; }
+.ft { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:44px; margin-bottom:48px; }
+.fb p { font-size:.78rem; color:rgba(250,248,244,.45); line-height:1.8; margin-top:14px; max-width:280px; }
+.fc h5 { font-family:'Syne',sans-serif; font-size:.62rem; text-transform:uppercase; letter-spacing:.2em; color:var(--gold2); margin-bottom:16px; font-weight:700; }
+.fc ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.fc a { color:rgba(250,248,244,.45); text-decoration:none; font-size:.76rem; transition:color .2s; }
+.fc a:hover { color:var(--gold2); }
+.socs { display:flex; gap:9px; margin-top:16px; }
+.soc { width:32px; height:32px; border:1px solid rgba(255,255,255,.1); border-radius:8px; display:flex; align-items:center; justify-content:center; color:rgba(250,248,244,.4); text-decoration:none; font-size:.72rem; transition:border-color .2s,color .2s; }
+.soc:hover { border-color:var(--gold); color:var(--gold2); }
+.fbot { border-top:1px solid rgba(255,255,255,.07); padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+.fcopy { font-size:.68rem; color:rgba(250,248,244,.3); }
+.fcopy a { color:rgba(250,248,244,.3); text-decoration:none; }
+.flinks { display:flex; gap:20px; }
+.flinks a { font-size:.68rem; color:rgba(250,248,244,.3); text-decoration:none; transition:color .2s; }
+.flinks a:hover { color:var(--gold2); }
+
+/* Animations */
+@keyframes fadeUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+/* Responsive */
+@media(max-width:1100px){
+  .svc-grid{grid-template-columns:repeat(2,1fr);}
+  .team-grid{grid-template-columns:repeat(2,1fr);}
+  .pillars-grid{grid-template-columns:repeat(2,1fr);}
+  .partner-inner{grid-template-columns:1fr;gap:48px;}
+  .why-grid{grid-template-columns:1fr;} .why-vis{display:none;}
+  .step-row{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:900px){
+  .nav-ul{display:none;} .ham{display:flex;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .founder-wrap{grid-template-columns:1fr;} .f-left{border-bottom:1px solid rgba(255,255,255,.1);}
+  .testi-grid{grid-template-columns:1fr;}
+  .strip{grid-template-columns:1fr;} .strip-item{border-right:none;border-bottom:1px solid var(--border2);}
+  .strip-item:last-child{border-bottom:none;}
+  .ft{grid-template-columns:1fr 1fr;}
+  .fbot{flex-direction:column;text-align:center;}
+  .svc-intro{grid-template-columns:1fr;}
+  .proc-head{grid-template-columns:1fr;}
+  .client-types{grid-template-columns:1fr;}
+  .hero-visual{display:none;}
+}
+@media(max-width:600px){
+  .svc-grid{grid-template-columns:1fr;} .team-grid{grid-template-columns:1fr;} .pillars-grid{grid-template-columns:1fr;} .step-row{grid-template-columns:1fr 1fr;} .ft{grid-template-columns:1fr;} .team-filter{display:none;}
+}
+</style>
+    </head>
+    <body>
+
+        <div class="cur" id="cur"></div>
+        <div class="curR" id="curR"></div>
+
+        <!-- Mobile -->
+        <div class="mob" id="mob">
+            <a href="#services" onclick="cl()">Services</a>
+            <a href="#team" onclick="cl()">Team</a>
+            <a href="#partner" onclick="cl()">Partners</a>
+            <a href="#testimonials" onclick="cl()">Clients</a>
+            <a href="#contact" onclick="cl()"
+                style="font-size:1rem;color:var(--gold)">Book Consultation</a>
+        </div>
+
+        <!-- NAV -->
+        <nav id="nav">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 48 48" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="12" r="6" stroke="#B8872E"
+                        stroke-width="1.8" />
+                    <line x1="24" y1="18" x2="24" y2="40" stroke="#B8872E"
+                        stroke-width="1.8" />
+                    <path d="M14 30 Q24 42 34 30" stroke="#B8872E"
+                        stroke-width="1.8" fill="none" />
+                    <circle cx="14" cy="32" r="2.5" fill="#B8872E" />
+                    <circle cx="34" cy="32" r="2.5" fill="#B8872E" />
+                    <line x1="10" y1="18" x2="38" y2="18" stroke="#B8872E"
+                        stroke-width="1.8" />
+                </svg>
+                <div>
+                    <div class="logo-name">Startup <span>Anchor</span></div>
+                    <div class="logo-sub">Legal · Financial · Compliance</div>
+                </div>
+            </a>
+            <ul class="nav-ul">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#partner">Partners</a></li>
+                <li><a href="#testimonials">Clients</a></li>
+                <li><a href="#contact" class="nav-cta">Free
+                        Consultation</a></li>
+            </ul>
+            <div class="ham" id="ham"
+                onclick="tog()"><span></span><span></span><span></span></div>
+        </nav>
+
+        <!-- ═══ HERO ═══ -->
+        <section class="hero" id="home">
+            <div class="hero-visual">SA</div>
+            <div class="hero-inner">
+                <div class="hero-tag">
+                    <div class="hero-tag-dot"></div>
+                    Now serving 800+ startups across India
+                </div>
+                <h1 class="hero-h1">
+                    The legal and financial backbone<br>every startup
+                    <em>deserves.</em>
+                </h1>
+                <p class="hero-sub">From Day 1 incorporation to Series B
+                    fundraise - Startup Anchor gives founders end-to-end legal,
+                    financial, and compliance cover so you can focus entirely on
+                    building.</p>
+                <div class="hero-btns">
+                    <a href="#contact" class="btn-dark">Book Free Consultation
+                        <svg width="13" height="13" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor"
+                            stroke-width="2.5"><path
+                                d="M5 12h14M12 5l7 7-7 7" /></svg></a>
+                    <a href="#services" class="btn-outline">Explore Services</a>
+                </div>
+                <div class="pills" style="margin-top:36px">
+                    <div class="chip"><span>✓</span> DPIIT Experts</div>
+                    <div class="chip"><span>✓</span> CA + CS + Legal</div>
+                    <div class="chip"><span>✓</span> Investor-ready docs</div>
+                    <div class="chip"><span>✓</span> 15+ years experience</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TICKER -->
+        <div class="ticker-wrap">
+            <div class="ticker-inner">
+                <div class="ticker-item"><span
+                        class="ticker-num">15+</span><span
+                        class="ticker-label">Years of Experience</span><span
+                        class="ticker-sep"></span></div>
+                <div class="ticker-item"><span
+                        class="ticker-num">800+</span><span
+                        class="ticker-label">Startups Served</span><span
+                        class="ticker-sep"></span></div>
+                <div class="ticker-item"><span class="ticker-num">14</span><span
+                        class="ticker-label">Service Verticals</span><span
+                        class="ticker-sep"></span></div>
+                <div class="ticker-item"><span class="ticker-num">₹0</span><span
+                        class="ticker-label">First Consultation</span><span
+                        class="ticker-sep"></span></div>
+                <div class="ticker-item"><span
+                        class="ticker-num">50+</span><span
+                        class="ticker-label">CA & Legal
+                        Professionals</span><span
+                        class="ticker-sep"></span></div>
+                <div class="ticker-item"><span
+                        class="ticker-num">100%</span><span
+                        class="ticker-label">Confidential</span><span
+                        class="ticker-sep"></span></div>
+                <!-- Duplicate for seamless loop -->
+                <div class="ticker-item"><span
+                        class="ticker-num">15+</span><span
+                        class="ticker-label">Years of Experience</span><span
+                        class="ticker-sep"></span></div>
+                <div class="ticker-item"><span
+                        class="ticker-num">800+</span><span
+                        class="ticker-label">Startups Served</span><span
+                        class="ticker-sep"></span></div>
+                <div class="ticker-item"><span class="ticker-num">14</span><span
+                        class="ticker-label">Service Verticals</span><span
+                        class="ticker-sep"></span></div>
+                <div class="ticker-item"><span class="ticker-num">₹0</span><span
+                        class="ticker-label">First Consultation</span><span
+                        class="ticker-sep"></span></div>
+                <div class="ticker-item"><span
+                        class="ticker-num">50+</span><span
+                        class="ticker-label">CA & Legal
+                        Professionals</span><span
+                        class="ticker-sep"></span></div>
+                <div class="ticker-item"><span
+                        class="ticker-num">100%</span><span
+                        class="ticker-label">Confidential</span><span
+                        class="ticker-sep"></span></div>
+            </div>
+        </div>
+
+        <!-- ═══ WHY ═══ -->
+        <section class="why" id="why">
+            <div class="why-grid">
+                <div>
+                    <div class="stag"><div class="stag-line"></div>Why Startup
+                        Anchor</div>
+                    <h2 class="sh">Built <em>exclusively</em><br>for
+                        founders.</h2>
+                    <p class="sd" style="margin-bottom:24px">Most compliance
+                        firms are built for legacy businesses. We built Startup
+                        Anchor from the ground up for fast-moving,
+                        investor-backed startups - where speed, accuracy, and
+                        founder-first thinking are everything.</p>
+                    <div class="pills">
+                        <div class="pill">Startup-first mindset</div>
+                        <div class="pill">Investor-ready documentation</div>
+                        <div class="pill">Rapid turnaround</div>
+                        <div class="pill">CA + CS + Legal under one roof</div>
+                        <div class="pill">100% confidential</div>
+                        <div class="pill">Dedicated relationship manager</div>
+                    </div>
+                </div>
+                <div class="why-vis">
+                    <div class="why-card-stack">
+                        <div class="wcs-card">
+                            <div class="wcs-tag">Speed</div>
+                            <div class="wcs-ico">⚡</div>
+                            <h4>7-day turnaround</h4>
+                            <p>Incorporation to DPIIT in a week - no delays, no
+                                excuses.</p>
+                        </div>
+                        <div class="wcs-card">
+                            <div class="wcs-tag">Quality</div>
+                            <div class="wcs-ico">🎯</div>
+                            <h4>Investor-grade docs</h4>
+                            <p>Every SHA, ESOP deed and agreement is DD-ready
+                                from day one.</p>
+                        </div>
+                        <div class="wcs-card">
+                            <div class="wcs-tag">Coverage</div>
+                            <div class="wcs-ico">🔒</div>
+                            <h4>End-to-end cover</h4>
+                            <p>Legal, CA, secretarial - one team, one bill, zero
+                                gaps.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ SERVICES ═══ -->
+        <section class="svc" id="services">
+            <div class="svc-intro">
+                <div>
+                    <div class="stag"><div class="stag-line"></div>What We
+                        Do</div>
+                    <h2 class="sh">Everything your startup <em>needs</em> to
+                        stay clean.</h2>
+                </div>
+                <p class="sd">14 service verticals. One relationship manager.
+                    One monthly bill. No surprises.</p>
+            </div>
+            <div class="svc-grid">
+
+                <div class="sc"><div class="sc-accent"></div><div
+                        class="sc-n">01 - Incorporation</div><svg class="sc-ico"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5"><rect x="3" y="3" width="18"
+                            height="18" rx="2" /><path
+                            d="M8 12h8M8 8h8M8 16h5" /></svg><div
+                        class="sc-title">Incorporation &amp; Setup</div><ul
+                        class="sc-list"><li>Company / LLP
+                            incorporation</li><li>MOA &amp; AOA drafting
+                            (startup-friendly)</li><li>DPIIT Startup
+                            Recognition</li><li>Form 56 &amp; tax exemption
+                            filing</li><li>Section 80-IAC
+                            advisory</li><li>Initial compliance
+                            setup</li></ul></div>
+
+                <div class="sc"><div class="sc-accent"></div><div
+                        class="sc-n">02 - Agreements</div><svg class="sc-ico"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5"><path
+                            d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle
+                            cx="9" cy="7" r="4" /><path
+                            d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" /></svg><div
+                        class="sc-title">Founder &amp; Internal
+                        Agreements</div><ul class="sc-list"><li>Founders'
+                            Agreement</li><li>Co-founder equity
+                            structuring</li><li>Vesting &amp; exit
+                            clauses</li><li>NDA drafting</li><li>Employment
+                            agreements</li></ul></div>
+
+                <div class="sc"><div class="sc-accent"></div><div
+                        class="sc-n">03 - Fundraise</div><svg class="sc-ico"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5"><line x1="12" y1="1" x2="12"
+                            y2="23" /><path
+                            d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" /></svg><div
+                        class="sc-title">Fundraising &amp; Investment
+                        Support</div><ul class="sc-list"><li>Term Sheet
+                            review</li><li>Shareholders' Agreement
+                            (SHA)</li><li>Share Subscription Agreement
+                            (SSA)</li><li>Private placement</li><li>Valuation
+                            &amp; cap table structuring</li></ul></div>
+
+                <div class="sc"><div class="sc-accent"></div><div
+                        class="sc-n">04 - ESOP</div><svg class="sc-ico"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5"><path
+                            d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg><div
+                        class="sc-title">ESOP &amp; Equity Structuring</div><ul
+                        class="sc-list"><li>ESOP scheme drafting</li><li>Grant
+                            letters &amp; vesting schedules</li><li>Cap table
+                            advisory</li></ul></div>
+
+                <div class="sc"><div class="sc-accent"></div><div
+                        class="sc-n">05 - FEMA</div><svg class="sc-ico"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5"><circle cx="12" cy="12"
+                            r="10" /><line x1="2" y1="12" x2="22"
+                            y2="12" /><path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg><div
+                        class="sc-title">FEMA &amp; International
+                        Compliance</div><ul class="sc-list"><li>FDI compliance
+                            under RBI</li><li>FC-GPR / FC-TRS
+                            filings</li><li>ODI (Overseas
+                            investment)</li><li>FEMA advisory</li></ul></div>
+
+                <div class="sc"><div class="sc-accent"></div><div
+                        class="sc-n">06 - Secretarial</div><svg class="sc-ico"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5"><path
+                            d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline
+                            points="14 2 14 8 20 8" /><line x1="16" y1="13"
+                            x2="8" y2="13" /><line x1="16" y1="17" x2="8"
+                            y2="17" /></svg><div class="sc-title">Secretarial
+                        &amp; ROC Compliance</div><ul class="sc-list"><li>Annual
+                            filings (AOC-4, MGT-7)</li><li>Board meeting notices
+                            &amp; minutes</li><li>Statutory registers
+                            maintenance</li><li>Event-based
+                            compliance</li></ul></div>
+
+                <div class="sc"><div class="sc-accent"></div><div
+                        class="sc-n">07 - Legal</div><svg class="sc-ico"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5"><path
+                            d="M20 14.66V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h5.34" /><polygon
+                            points="18 2 22 6 12 16 8 16 8 12 18 2" /></svg><div
+                        class="sc-title">Legal Contracts &amp;
+                        Documentation</div><ul class="sc-list"><li>Vendor &amp;
+                            service agreements</li><li>Privacy policy &amp;
+                            T&amp;C</li><li>IP assignment
+                            agreements</li></ul></div>
+
+                <div class="sc"><div class="sc-accent"></div><div
+                        class="sc-n">08 - IPR</div><svg class="sc-ico"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5"><path
+                            d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg><div
+                        class="sc-title">Intellectual Property (IPR)</div><ul
+                        class="sc-list"><li>Trademark filing &amp;
+                            protection</li><li>Copyrights</li><li>IP strategy
+                            advisory</li></ul></div>
+
+                <div class="sc"><div class="sc-accent"></div><div
+                        class="sc-n">09 - Due Diligence</div><svg class="sc-ico"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5"><circle cx="11" cy="11" r="8" /><line
+                            x1="21" y1="21" x2="16.65" y2="16.65" /></svg><div
+                        class="sc-title">Due Diligence &amp; Compliance
+                        Audit</div><ul class="sc-list"><li>Legal due diligence
+                            before funding</li><li>Compliance health
+                            check</li><li>Risk identification &amp;
+                            remediation</li></ul></div>
+
+                <div class="sc"><div class="sc-accent"></div><div
+                        class="sc-n">10 - Accounting</div><svg class="sc-ico"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5"><rect x="2" y="3" width="20"
+                            height="14" rx="2" /><line x1="8" y1="21" x2="16"
+                            y2="21" /><line x1="12" y1="17" x2="12"
+                            y2="21" /></svg><div class="sc-title">Accounting
+                        &amp; Bookkeeping</div><ul
+                        class="sc-list"><li>Day-to-day
+                            bookkeeping</li><li>Financial statements
+                            preparation</li><li>MIS reports for
+                            founders</li><li>Burn rate &amp; cash flow
+                            tracking</li></ul></div>
+
+                <div class="sc"><div class="sc-accent"></div><div
+                        class="sc-n">11 - GST</div><svg class="sc-ico"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5"><polyline
+                            points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg><div
+                        class="sc-title">GST Compliance &amp; Advisory</div><ul
+                        class="sc-list"><li>GST
+                            registration</li><li>Monthly/quarterly
+                            returns</li><li>Input tax credit
+                            optimization</li><li>GST notices &amp; litigation
+                            support</li></ul></div>
+
+                <div class="sc"><div class="sc-accent"></div><div
+                        class="sc-n">12 - Tax</div><svg class="sc-ico"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5"><path
+                            d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /></svg><div
+                        class="sc-title">Income Tax &amp; Corporate
+                        Taxation</div><ul class="sc-list"><li>Income tax returns
+                            (ITR)</li><li>Advance tax planning</li><li>TDS
+                            compliance &amp; filings</li><li>Tax structuring for
+                            startups</li></ul></div>
+
+                <div class="sc"><div class="sc-accent"></div><div
+                        class="sc-n">13 - HR &amp; PoSH</div><svg class="sc-ico"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5"><path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" /></svg><div
+                        class="sc-title">PoSH &amp; HR Compliance</div><ul
+                        class="sc-list"><li>PoSH policy drafting &amp; ICC
+                            setup</li><li>Annual PoSH reporting &amp;
+                            training</li><li>HR policy &amp; employment
+                            documentation</li><li>Payroll management (PF, ESIC,
+                            TDS)</li><li>HR advisory for hiring &amp;
+                            exits</li></ul></div>
+
+                <div class="sc sc-cta"><div class="sc-n"
+                        style="color:rgba(240,204,170,.5)">14 -
+                        Retainership</div><div class="sc-title">Always-on
+                        Support</div><ul class="sc-list"
+                        style="margin-bottom:24px"><li>Ongoing legal +
+                            secretarial support</li><li>Monthly compliance
+                            management</li><li>On-call legal
+                            advisory</li><li>Dedicated relationship
+                            manager</li></ul><a href="#contact" class="btn-gold"
+                        style="font-size:.73rem;padding:11px 22px;align-self:flex-start">Get
+                        Started Free →</a></div>
+
+            </div>
+        </section>
+
+        <!-- ═══ PROCESS ═══ -->
+        <section class="proc" id="process">
+            <div class="proc-head">
+                <div>
+                    <div class="stag"><div class="stag-line"></div>How It
+                        Works</div>
+                    <h2 class="sh">From first call to<br><em>fully
+                            compliant</em> in days.</h2>
+                </div>
+                <p class="sd">We've stripped compliance down to 5 clean steps -
+                    so you can get back to building.</p>
+            </div>
+            <div class="step-row">
+                <div class="step"><div class="step-n">01</div><h4>Free
+                        Consultation</h4><p>30-min expert call to map your
+                        startup's exact needs and current gaps.</p></div>
+                <div class="step"><div class="step-n">02</div><h4>Custom
+                        Proposal</h4><p>Transparent scope and pricing - zero
+                        jargon, zero surprises.</p></div>
+                <div class="step"><div class="step-n">03</div><h4>Dedicated
+                        Team</h4><p>A CA, CS, and legal specialist assigned
+                        exclusively to your company.</p></div>
+                <div class="step"><div class="step-n">04</div><h4>Execute &amp;
+                        Deliver</h4><p>End-to-end execution with live progress
+                        updates via your RM.</p></div>
+                <div class="step"><div class="step-n">05</div><h4>Ongoing
+                        Partnership</h4><p>Monthly reviews, proactive alerts,
+                        always-on advisory as you scale.</p></div>
+            </div>
+        </section>
+
+        <!-- ═══════════ TEAM ═══════════ -->
+        <section class="team-sec" id="team">
+            <div class="stag"><div class="stag-line"></div>The People Behind the
+                Promise</div>
+            <h2 class="sh">A <em>full-stack</em> team of lawyers, CAs &amp;
+                company secretaries.</h2>
+
+            <!-- FOUNDER -->
+            <div class="founder-wrap">
+                <div class="f-left">
+                    <div class="f-avatar">
+                        <!-- <img src="kanti_rustagi.jpg" alt="Kanti Mohan Rustagi"> -->
+                        <!-- <div class="f-init">KMR</div> -->
+                        <img src="/assets/images/kanti.jpg"
+                            alt="Kanti Mohan Rustagi"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                        <div class="f-init" style="display:none;">KMR</div>
+                    </div>
+                    <div class="f-name">Kanti Mohan Rustagi</div>
+                    <div class="f-role">Founder &amp; Managing Partner</div>
+                    <div class="f-badges">
+                        <div class="badge">CS · CMA · Attorney</div>
+                        <div class="badge">Insolvency Professional</div>
+                        <div class="badge">Bar Council of India</div>
+                        <div class="badge">ICSI Member</div>
+                    </div>
+                </div>
+                <div class="f-right">
+                    <div class="f-quote">"The law is not a wall - it's a
+                        foundation.<br>Our job is to make it yours."</div>
+                    <div class="f-bio">
+                        <p>With <strong>over 30 years of rich
+                                experience</strong> across the legal spectrum,
+                            Kanti Mohan Rustagi has led legal departments at
+                            marquee corporations including <strong>Hinduja
+                                Global Solutions Ltd.</strong> and
+                            <strong>Coca-Cola India</strong>.</p>
+                        <p>A member of the <strong>Bar Council of India</strong>
+                            and the <strong>Institute of Company Secretaries of
+                                India</strong>, he is also a certified
+                            <strong>Insolvency Professional</strong> and serves
+                            on the boards of multiple companies.</p>
+                        <p>Recognised as <strong>"Leader of Leaders"</strong> at
+                            a global CEO forum of Hinduja Group, he brings
+                            institutional-grade legal thinking to every startup
+                            we serve.</p>
+                    </div>
+                    <div class="f-creds">
+                        <div class="cred"><div
+                                class="cred-dot"></div><span>Qualified Company
+                                Secretary</span></div>
+                        <div class="cred"><div class="cred-dot"></div><span>Cost
+                                &amp; Management Accountant</span></div>
+                        <div class="cred"><div
+                                class="cred-dot"></div><span>Enrolled
+                                Attorney</span></div>
+                        <div class="cred"><div
+                                class="cred-dot"></div><span>Board Director,
+                                multiple companies</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Filter + Grid -->
+            <div class="team-section-header">
+                <div
+                    style="font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--ink)">Our
+                    Core Team</div>
+                <div class="team-filter">
+                    <button class="tf-btn active"
+                        onclick="filterTeam('all',this)">All</button>
+                    <button class="tf-btn"
+                        onclick="filterTeam('legal',this)">Legal &amp;
+                        CS</button>
+                    <button class="tf-btn" onclick="filterTeam('ca',this)">CA /
+                        Finance</button>
+                </div>
+            </div>
+
+            <div class="team-grid" id="teamGrid">
+
+                <!-- LEGAL / CS TEAM -->
+                <div class="tc legal" data-cat="legal">
+                    <div class="tc-header">
+                        <!-- <div class="tc-av">KG</div> -->
+                        <div class="tc-av">
+                            <img src="/assets/images/kanishkha.png"
+                                alt="Kanishka Gautam"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <span style="display:none;">KG</span>
+                        </div>
+                        <div class="tc-meta">
+                            <div class="tc-type">Legal</div>
+                            <div class="tc-name">Kanishka Gautam</div>
+                            <div class="tc-role">Sr. Associate Counsel -
+                                Litigation</div>
+                        </div>
+                    </div>
+                    <div class="tc-bio">LL.M., National Law Institute
+                        University, Bhopal - Gold Medal awardee. Civil and
+                        criminal litigation specialist. Pursuing PG Diploma in
+                        Taxation Law.</div>
+                </div>
+
+                <!-- <div class="tc legal" data-cat="legal">
+      <div class="tc-header">
+        <div class="tc-av">DG</div>
+        <div class="tc-meta">
+          <div class="tc-type">Legal</div>
+          <div class="tc-name">Deepika Gautam</div>
+          <div class="tc-role">Associate Counsel - Corporate</div>
+        </div>
+      </div>
+      <div class="tc-bio">B.B.A LL.B, NLU Odisha. Specialist in IP Law and Business Laws. Advises on corporate transactions and labour law compliances.</div>
+    </div> -->
+
+                <div class="tc legal" data-cat="legal">
+                    <div class="tc-header">
+                        <!-- <div class="tc-av">HK</div> -->
+                        <div class="tc-av">
+                            <img src="/assets/images/harshita.png"
+                                alt="Harshita Kumari"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <span style="display:none;">HK</span>
+                        </div>
+                        <div class="tc-meta">
+                            <div class="tc-type">Secretarial</div>
+                            <div class="tc-name">Harshita Kumari</div>
+                            <div class="tc-role">Company Secretary</div>
+                        </div>
+                    </div>
+                    <div class="tc-bio">Associate Member, ICSI. Advises on
+                        corporate governance, FDI/ODI, FEMA and trademark
+                        matters. Secretarial due diligence and regulatory
+                        liaison.</div>
+                </div>
+
+                <div class="tc legal" data-cat="legal">
+                    <div class="tc-header">
+                        <!-- <div class="tc-av">MW</div> -->
+                        <div class="tc-av">
+                            <img src="/assets/images/manisha.png"
+                                alt="Manisha Wadhwa"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <span style="display:none;">MW</span>
+                        </div>
+
+                        <div class="tc-meta">
+                            <div class="tc-type">Secretarial</div>
+                            <div class="tc-name">Manisha Wadhwa</div>
+                            <div class="tc-role">Associate - Company
+                                Secretary</div>
+                        </div>
+                    </div>
+                    <div class="tc-bio">Qualified CS and Law Graduate with 4
+                        years' experience. Handles FDI/ODI/RBI matters, M&amp;A,
+                        corporate governance, and secretarial audits.</div>
+                </div>
+
+                <div class="tc legal" data-cat="legal">
+                    <div class="tc-header">
+                        <!-- <div class="tc-av">SD</div> -->
+                        <div class="tc-av">
+                            <img src="/assets/images/swati.png"
+                                alt="Swati Dubey"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <span style="display:none;">SD</span>
+                        </div>
+
+                        <div class="tc-meta">
+                            <div class="tc-type">PoSH &amp; CS</div>
+                            <div class="tc-name">Swati Dubey</div>
+                            <div class="tc-role">PoSH &amp; Corporate
+                                Compliance</div>
+                        </div>
+                    </div>
+                    <div class="tc-bio">PoSH Consultant, CS, and Law Graduate
+                        with 7+ years' experience. External ICC Member. Guides
+                        listed companies on statutory and legal
+                        provisions.</div>
+                </div>
+
+                <div class="tc legal" data-cat="legal">
+                    <div class="tc-header">
+                        <!-- <div class="tc-av">DS</div> -->
+                        <div class="tc-av">
+                            <img src="/assets/images/deepak.png"
+                                alt="Deepak Singh Poonia"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <span style="display:none;">DS</span>
+                        </div>
+                        <div class="tc-meta">
+                            <div class="tc-type">Legal</div>
+                            <div class="tc-name">Deepak Singh Poonia</div>
+                            <div class="tc-role">Sr. Associate Counsel -
+                                Litigation</div>
+                        </div>
+                    </div>
+                    <div class="tc-bio">LL.B, Campus Law Centre. Civil and
+                        criminal litigation across District Courts, Consumer
+                        forums, and MCA. Expert in dispute resolution.</div>
+                </div>
+
+                <div class="tc legal" data-cat="legal">
+                    <div class="tc-header">
+                        <div class="tc-av">DM</div>
+                        <div class="tc-meta">
+                            <div class="tc-type">Legal</div>
+                            <div class="tc-name">Deepika Madan</div>
+                            <div class="tc-role">Associate Counsel - Corporate
+                                &amp; Litigation</div>
+                        </div>
+                    </div>
+                    <div class="tc-bio">Singapore Institute of Arbitrators
+                        fellow. LL.B, Delhi University. BBA, NUS. Bar Council of
+                        India &amp; Delhi High Court Bar Association
+                        member.</div>
+                </div>
+
+                <!-- <div class="tc legal" data-cat="legal">
+      <div class="tc-header">
+        <div class="tc-av">PP</div>
+        <div class="tc-meta">
+          <div class="tc-type">Legal</div>
+          <div class="tc-name">Prasann Prashar</div>
+          <div class="tc-role">Legal Associate - Litigation</div>
+        </div>
+      </div>
+      <div class="tc-bio">University of Delhi alumnus. Dispute Resolution, Civil &amp; Criminal Litigation. Argued cases before District Courts, High Court, and the Supreme Court.</div>
+    </div> -->
+
+                <!-- ARG CA TEAM -->
+                <div class="tc ca" data-cat="ca">
+                    <div class="tc-header">
+                        <div class="tc-av">RP</div>
+                        <div class="tc-meta">
+                            <div class="tc-type"
+                                style="background:rgba(74,140,70,.1);color:#4A8C46">CA
+                                - ARG &amp; Co.</div>
+                            <div class="tc-name">R. Prakash</div>
+                            <div class="tc-role">Partner CA - Audit &amp;
+                                Assurance</div>
+                        </div>
+                    </div>
+                    <div class="tc-bio">Chartered Accountant with 18+ years in
+                        statutory audit and financial assurance. Extensive
+                        experience with MNCs and listed entities across diverse
+                        sectors.</div>
+                    <div class="tc-firm">ARG &amp; Co. LLP, Chartered
+                        Accountants</div>
+                </div>
+
+                <div class="tc ca" data-cat="ca">
+                    <div class="tc-header">
+                        <div class="tc-av">SM</div>
+                        <div class="tc-meta">
+                            <div class="tc-type"
+                                style="background:rgba(74,140,70,.1);color:#4A8C46">CA
+                                - ARG &amp; Co.</div>
+                            <div class="tc-name">S. Mehta</div>
+                            <div class="tc-role">Partner CA - Direct Tax &amp;
+                                TP</div>
+                        </div>
+                    </div>
+                    <div class="tc-bio">Specialist in Direct Taxation and
+                        Transfer Pricing. Advises startups and MNCs on tax
+                        structuring, advance tax planning, and income tax
+                        litigation.</div>
+                    <div class="tc-firm">ARG &amp; Co. LLP, Chartered
+                        Accountants</div>
+                </div>
+
+                <div class="tc ca" data-cat="ca">
+                    <div class="tc-header">
+                        <div class="tc-av">
+                            <img src="/assets/images/ajay-gupta.jpeg"
+                                alt="A. Gupta"
+                                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                            <span style="display:none;">AG</span>
+                        </div>
+                        <div class="tc-meta">
+                            <div class="tc-type"
+                                style="background:rgba(74,140,70,.1);color:#4A8C46">CA
+                                - ARG &amp; Co.</div>
+                            <div class="tc-name">A. Gupta</div>
+                            <div class="tc-role">Partner CA - GST &amp; Indirect
+                                Tax</div>
+                        </div>
+                    </div>
+                    <div class="tc-bio">Expert in GST compliance, input tax
+                        credit optimization, and indirect tax litigation.
+                        Handles GST notices and advisory for funded startups
+                        across sectors.</div>
+                    <div class="tc-firm">ARG &amp; Co. LLP, Chartered
+                        Accountants</div>
+                </div>
+
+                <div class="tc ca" data-cat="ca">
+                    <div class="tc-header">
+                        <div class="tc-av">VK</div>
+                        <div class="tc-meta">
+                            <div class="tc-type"
+                                style="background:rgba(74,140,70,.1);color:#4A8C46">CA
+                                - ARG &amp; Co.</div>
+                            <div class="tc-name">V. Kumar</div>
+                            <div class="tc-role">Partner CA - Valuations &amp;
+                                M&amp;A</div>
+                        </div>
+                    </div>
+                    <div class="tc-bio">DCF valuation specialist. Supports
+                        startups with pre-funding valuations, cap table
+                        structuring, and M&amp;A transaction advisory. Serves
+                        NRIs and expatriate investors.</div>
+                    <div class="tc-firm">ARG &amp; Co. LLP, Chartered
+                        Accountants</div>
+                </div>
+
+                <div class="tc ca" data-cat="ca">
+                    <div class="tc-header">
+                        <div class="tc-av">NS</div>
+                        <div class="tc-meta">
+                            <div class="tc-type"
+                                style="background:rgba(74,140,70,.1);color:#4A8C46">CA
+                                - ARG &amp; Co.</div>
+                            <div class="tc-name">N. Sharma</div>
+                            <div class="tc-role">Partner CA - Outsourcing &amp;
+                                Bookkeeping</div>
+                        </div>
+                    </div>
+                    <div class="tc-bio">Leads the complete outsourcing vertical
+                        - day-to-day bookkeeping, financial statements, MIS
+                        reports, burn rate tracking, and payroll management for
+                        100+ clients.</div>
+                    <div class="tc-firm">ARG &amp; Co. LLP, Chartered
+                        Accountants</div>
+                </div>
+
+                <div class="tc ca" data-cat="ca">
+                    <div class="tc-header">
+                        <div class="tc-av">PR</div>
+                        <div class="tc-meta">
+                            <div class="tc-type"
+                                style="background:rgba(74,140,70,.1);color:#4A8C46">CS
+                                - ARG &amp; Co.</div>
+                            <div class="tc-name">P. Rao</div>
+                            <div class="tc-role">Company Secretary</div>
+                        </div>
+                    </div>
+                    <div class="tc-bio">Qualified CS with expertise in
+                        secretarial compliances, ROC filings, and corporate
+                        governance for funded startups, portfolio companies, and
+                        MNC subsidiaries.</div>
+                    <div class="tc-firm">ARG &amp; Co. LLP, Chartered
+                        Accountants</div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ═══ PARTNERSHIP ═══ -->
+        <section class="partner-sec" id="partner">
+            <div class="partner-inner">
+                <div>
+                    <div class="stag"><div class="stag-line"
+                            style="background:var(--gold2)"></div>Strategic CA
+                        Alliance</div>
+                    <h2 class="sh">CA firepower,<br><em>built right
+                            in.</em></h2>
+                    <p class="sd" style="margin-bottom:32px">All financial and
+                        CA-led services are delivered in partnership with ARG
+                        &amp; Co. LLP - a distinguished firm of Chartered
+                        Accountants serving MNCs, Indian corporates, NRIs, and
+                        expatriates.</p>
+                    <div class="p-logo-box">
+                        <div class="p-logo-icon">ARG</div>
+                        <div>
+                            <div class="p-logo-name">ARG &amp; Co. LLP</div>
+                            <div class="p-logo-sub">Chartered Accountants · New
+                                Delhi</div>
+                        </div>
+                    </div>
+                    <div class="client-types">
+                        <div class="ct"><div class="ct-ico">🏢</div><div
+                                class="ct-text">MNCs &amp; Indian
+                                Corporates</div></div>
+                        <div class="ct"><div class="ct-ico">🌏</div><div
+                                class="ct-text">NRIs &amp;
+                                Expatriates</div></div>
+                        <div class="ct"><div class="ct-ico">🚀</div><div
+                                class="ct-text">Funded Startups</div></div>
+                        <div class="ct"><div class="ct-ico">💼</div><div
+                                class="ct-text">Portfolio Companies</div></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="p-stats" style="margin-bottom:20px">
+                        <div class="ps"><div class="ps-n">50+</div><div
+                                class="ps-l">Professionals</div></div>
+                        <div class="ps"><div class="ps-n">5</div><div
+                                class="ps-l">Partner CAs</div></div>
+                        <div class="ps"><div class="ps-n">1</div><div
+                                class="ps-l">Company Secretary</div></div>
+                    </div>
+                    <div class="p-expertise">
+                        <div class="pe"><div
+                                class="pe-dot"></div><span>Statutory Audit &amp;
+                                Assurance</span></div>
+                        <div class="pe"><div class="pe-dot"></div><span>DCF
+                                Valuations</span></div>
+                        <div class="pe"><div class="pe-dot"></div><span>Transfer
+                                Pricing</span></div>
+                        <div class="pe"><div class="pe-dot"></div><span>Direct
+                                &amp; Indirect Taxation</span></div>
+                        <div class="pe"><div
+                                class="pe-dot"></div><span>Secretarial
+                                Compliances</span></div>
+                        <div class="pe"><div class="pe-dot"></div><span>Complete
+                                Financial Outsourcing</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PILLARS -->
+        <section class="pillars-sec">
+            <div
+                style="display:grid;grid-template-columns:1fr 2fr;gap:60px;align-items:center;margin-bottom:52px">
+                <div>
+                    <div class="stag"><div class="stag-line"></div>Our
+                        Promise</div>
+                    <h2 class="sh">The Anchor <em>Difference.</em></h2>
+                </div>
+                <p class="sd">Four commitments we make to every founder -
+                    non-negotiable, every single engagement.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pil"><div class="pil-ico">⚡</div><h3>Speed</h3><p>We
+                        operate at startup pace. Most filings and documents
+                        completed faster than industry standard - your runway is
+                        too precious to waste.</p></div>
+                <div class="pil"><div
+                        class="pil-ico">🔒</div><h3>Confidentiality</h3><p>Every
+                        engagement covered by a strict NDA. Cap tables, term
+                        sheets, and strategies stay between us.
+                        Always.</p></div>
+                <div class="pil"><div
+                        class="pil-ico">🎯</div><h3>Precision</h3><p>Investor-grade
+                        work by design. Every document reviewed by a
+                        multi-disciplinary team before it reaches you.</p></div>
+                <div class="pil"><div
+                        class="pil-ico">🤝</div><h3>Partnership</h3><p>We grow
+                        with you. From pre-seed to Series B and beyond - Startup
+                        Anchor evolves its support as you scale.</p></div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="testi-sec" id="testimonials">
+            <div
+                style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:52px">
+                <div><div class="stag"><div class="stag-line"></div>Founder
+                        Stories</div><h2 class="sh">Trusted by
+                        builders<br><em>across India.</em></h2></div>
+                <p class="sd">Don't take our word for it - hear from the
+                    founders who scaled with Startup Anchor by their side.</p>
+            </div>
+            <div class="testi-grid">
+                <div class="tc2"><div class="stars">★★★★★</div><div
+                        class="tt">"Startup Anchor handled our Series A documentation from SHA to cap table restructuring. The quality was exceptional - our investors' lawyers had zero comebacks. That's when I knew we had the right partner."</div><div
+                        class="ta"><div class="ta-av">RK</div><div><div
+                                class="ta-name">Rohan Kapoor</div><div
+                                class="ta-role">Co-founder &amp; CEO, FinStack
+                                (SaaS)</div></div></div></div>
+                <div class="tc2"><div class="stars">★★★★★</div><div
+                        class="tt">"We incorporated, got DPIIT recognition, GST, and our founders' agreement sorted in one week. One week! The team genuinely understands what it means to move fast in a startup environment."</div><div
+                        class="ta"><div class="ta-av">NM</div><div><div
+                                class="ta-name">Neha Mehra</div><div
+                                class="ta-role">Founder, GreenRoute
+                                (Climate-tech)</div></div></div></div>
+                <div class="tc2"><div class="stars">★★★★★</div><div
+                        class="tt">"The retainership model is brilliant. One flat fee, a full legal + CA + secretarial team on call. It's transformed how we think about compliance - from a burden to a competitive edge."</div><div
+                        class="ta"><div class="ta-av">AS</div><div><div
+                                class="ta-name">Arjun Singh</div><div
+                                class="ta-role">Founder, BuildFlow
+                                (PropTech)</div></div></div></div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-sec" id="contact">
+            <div class="cta-inner">
+                <div class="stag"><div class="stag-line"
+                        style="background:var(--gold2)"></div>Let's Build
+                    Together</div>
+                <h2 class="sh">Your startup deserves<br><em>expert
+                        anchoring.</em></h2>
+                <p class="sd">Whether you're on day one or preparing for your
+                    next raise - we're ready to be your compliance backbone.</p>
+                <div class="cta-btns">
+                    <a href="mailto:hello@startupanchor.in"
+                        class="btn-gold">Book Free Consultation <svg width="13"
+                            height="13" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5"><path
+                                d="M5 12h14M12 5l7 7-7 7" /></svg></a>
+                    <a href="tel:+917827641921" class="btn-ghost-light">Call Us
+                        Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- STRIP -->
+        <div class="strip">
+            <div class="strip-item"><div class="strip-ico">✉</div><div><div
+                        class="strip-l">Email Us</div><div
+                        class="strip-v">hello@startupanchor.in</div></div></div>
+            <div class="strip-item"><div class="strip-ico">☎</div><div><div
+                        class="strip-l">Call Us</div><div class="strip-v">+91
+                        78276 41921</div></div></div>
+            <div class="strip-item"><div class="strip-ico">📍</div><div><div
+                        class="strip-l">Office</div><div class="strip-v">New
+                        Delhi, India</div></div></div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer>
+            <div class="ft">
+                <div class="fb">
+                    <a href="#" class="logo">
+                        <svg viewBox="0 0 48 48" fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            style="width:30px;height:30px"><circle cx="24"
+                                cy="12" r="6" stroke="#B8872E"
+                                stroke-width="1.8" /><line x1="24" y1="18"
+                                x2="24" y2="40" stroke="#B8872E"
+                                stroke-width="1.8" /><path
+                                d="M14 30 Q24 42 34 30" stroke="#B8872E"
+                                stroke-width="1.8" fill="none" /><circle cx="14"
+                                cy="32" r="2.5" fill="#B8872E" /><circle cx="34"
+                                cy="32" r="2.5" fill="#B8872E" /><line x1="10"
+                                y1="18" x2="38" y2="18" stroke="#B8872E"
+                                stroke-width="1.8" /></svg>
+                        <div><div class="logo-name">Startup
+                                <span>Anchor</span></div><div
+                                class="logo-sub">Legal · Financial ·
+                                Compliance</div></div>
+                    </a>
+                    <p>India's premier startup legal and compliance partner -
+                        built for founders who refuse to slow down.</p>
+                    <div class="socs"><a href="#" class="soc">in</a><a href="#"
+                            class="soc">𝕏</a><a href="#" class="soc">▶</a><a
+                            href="#" class="soc">f</a></div>
+                </div>
+                <div class="fc"><h5>Start</h5><ul><li><a href="#">Company
+                                Incorporation</a></li><li><a href="#">LLP
+                                Registration</a></li><li><a href="#">DPIIT
+                                Recognition</a></li><li><a href="#">Founders'
+                                Agreement</a></li><li><a href="#">Trademark
+                                Filing</a></li></ul></div>
+                <div class="fc"><h5>Manage</h5><ul><li><a href="#">Secretarial
+                                Compliance</a></li><li><a href="#">Accounting
+                                &amp; Bookkeeping</a></li><li><a href="#">GST
+                                Compliance</a></li><li><a href="#">Income Tax
+                                Returns</a></li><li><a href="#">PoSH &amp;
+                                HR</a></li></ul></div>
+                <div class="fc"><h5>Scale</h5><ul><li><a href="#">Fundraising
+                                Support</a></li><li><a href="#">ESOP
+                                Structuring</a></li><li><a href="#">FEMA
+                                Compliance</a></li><li><a href="#">Due
+                                Diligence</a></li><li><a
+                                href="#">Retainership</a></li></ul></div>
+            </div>
+            <div class="fbot">
+                <div class="fcopy">© 2026 <a
+                        href="https://www.patanjaliassociates.com/"
+                        target="_blank">Patanjali Associates Pvt. Ltd.</a> - All
+                    rights reserved. Operating as Startup Anchor.</div>
+                <div class="flinks"><a href="#">Privacy Policy</a><a
+                        href="#">Terms &amp; Conditions</a><a href="#">Refund
+                        Policy</a></div>
+            </div>
+        </footer>
+
+        <script>
+// Cursor
+const cur=document.getElementById('cur'),curR=document.getElementById('curR');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function loop(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;curR.style.left=rx+'px';curR.style.top=ry+'px';requestAnimationFrame(loop);})();
+document.querySelectorAll('a,button,.sc,.pil,.tc,.tc2,.diff,.step').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='15px';cur.style.height='15px';curR.style.width='48px';curR.style.height='48px';});
+  el.addEventListener('mouseleave',()=>{cur.style.width='9px';cur.style.height='9px';curR.style.width='32px';curR.style.height='32px';});
+});
+
+// Nav
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>30);
+});
+
+// Mobile
+function tog(){document.getElementById('mob').classList.toggle('open');}
+function cl(){document.getElementById('mob').classList.remove('open');}
+
+// Team filter
+function filterTeam(cat,btn){
+  document.querySelectorAll('.tf-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.tc').forEach(card=>{
+    if(cat==='all' || card.dataset.cat===cat){
+      card.style.display='';
+    } else {
+      card.style.display='none';
+    }
+  });
+}
+</script>
+    </body>
+</html>
